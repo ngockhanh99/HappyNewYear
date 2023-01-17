@@ -438,3 +438,15 @@ body {
 #btnNo {
   position: absolute;
 }
+@media only screen and (max-width: 600px) {
+  .lixi{
+    width: 200px;
+    height: auto;
+  }
+  .div-lixi{
+    padding-top: 125px;
+  }
+  .vnd{
+    width: 77px;
+  }
+}
