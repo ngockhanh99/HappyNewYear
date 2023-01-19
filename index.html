@@ -55,17 +55,20 @@
 	<!-- App -->
 	<div class="container">
 		<div class="stage-container remove">
-			<div class="div-lixi">
-				<div style="position: absolute;">
-					<img src="./image/lixi.png" alt="" class="lixi" onclick="actionClick()">
-					<img src="./image/500.png" alt="" class="vnd" id="vnd-0">
-					<img src="./image/500.png" alt="" class="vnd" id="vnd-1">
-					<img src="./image/500.png" alt="" class="vnd" id="vnd-2">
-					<img src="./image/500.png" alt="" class="vnd" id="vnd-3">
-					<img src="./image/500.png" alt="" class="vnd" id="vnd-4">
+			<div class="flip-box div-lixi">
+				<div class="flip-box-inner" id="flip-box-inner" onclick="actionClick()">
+					<div class="flip-box-front">
+						<img src="./image/truoc.png" alt="" class="lixi" >
+						
+					</div>
+					<div class="flip-box-back" id="flip-box-back">
+						<img src="./image/sau.png" alt="" class="lixi" >
+						<img src="./image/nap.png" alt="" class="nap" id="nap">
+						
+					</div>
 				</div>
-				<!-- <input type="button" id="btnNo" value="KHÔNG" onmouseover="noHover()" /> -->
 			</div>
+			
 			<div class="canvas-container">
 				<canvas id="trails-canvas"></canvas>
 				<canvas id="main-canvas"></canvas>

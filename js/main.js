@@ -2286,29 +2286,41 @@ if (IS_HEADER) {
 			);
 	}, 0);
 }
+const obj = [
+	{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
+	{ transform: "translate(-98%, -92%) rotate(-13deg)", url: "./image/500.png" },
+	{ transform: "translate(-50%, -100%)", url: "./image/500.png" },
+	{ transform: "translate(-11%, -87%) rotate(10deg)", url: "./image/500.png" },
+	{ transform: "translate(33%, -73%) rotate(20deg)", url: "./image/500.png" }
+]
 function actionClick() {
-	console.log(1);
-	let vnd = document.querySelectorAll('.vnd');
-	vnd.forEach((item, index) => {
-		item.style.transform = "translate(-50%,-100%)"
-		setTimeout(() => {
-			if (index == vnd.length - 1) {
-				document.getElementById('vnd-' + index).style.transform = "translate(33%, -73%) rotate(20deg)"
-			}
-			if (index == vnd.length - 2) {
-				document.getElementById('vnd-' + index).style.transform = "translate(-11%, -87%) rotate(10deg)"
-			}
-			if (index == 0) {
-				document.getElementById('vnd-' + index).style.transform = "translate(-137%, -81%) rotate(-23deg)"
-			}
-			if (index == 1) {
-				document.getElementById('vnd-' + index).style.transform = "translate(-98%, -92%) rotate(-13deg)"
-			}
-		}, 1000);
-	})
+	console.log(obj)
+	document.getElementById('flip-box-inner').style.transform = "rotateY(180deg)"
 	setTimeout(() => {
-		
+		document.getElementById('nap').style.transform = "translateY(-100%) rotateX(180deg)"
+	}, 1000);
+	setTimeout(() => {
+		let vnd = document.getElementById('flip-box-back');
+		obj.forEach((item, index) => {
+			var html = document.createElement('img')
+			html.setAttribute('src', item.url)
+			html.setAttribute('id', 'vnd-' + index)
+			html.classList.add('vnd')
+			html.classList.add('vnd')
+			vnd.appendChild(html);
+		})
+		setTimeout(() => {
+			let list_img = document.querySelectorAll('.vnd');
+			list_img.forEach((item, index) => {
+				item.style.transform = "translate(-50%,-100%)"
+				setTimeout(() => {
+					document.getElementById('vnd-' + index).style.transform = obj[index].transform
+				}, 1000);
+			})
+		}, 100);
+
 	}, 2000);
+
 }
 function noHover() {
 	var x = Math.floor(Math.random() * window.innerWidth);
