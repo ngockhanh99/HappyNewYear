@@ -446,6 +446,23 @@ body {
 #btnNo {
   position: absolute;
 }
+@media only screen and (max-width: 414px) {
+  .lixi, .nap{
+    width: 200px;
+    height: auto;
+  }
+  .div-lixi{
+    padding-top: 125px;
+  }
+  .vnd{
+    width: 77px;
+    transition: 1s all;
+  }
+  .flip-box-inner{
+    width: 200px !important;
+    height: 400px !important;
+  }
+}
 @media only screen and (max-width: 375px) {
   .lixi, .nap{
     width: 200px;
