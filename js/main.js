@@ -2344,11 +2344,11 @@ function actionClick() {
 				item.style.transform = "translate(-50%,-100%)"
 				setTimeout(() => {
 					document.getElementById('vnd-' + index).style.transform = array_VND[index].transform
-				}, 1000);
+				}, 1200);
 			})
-		}, 100);
+		}, 700);
 
-	}, 2000);
+	}, 2500);
 	setTimeout(() => {
 		let sum = 0
 		array_VND.forEach((item) => {
