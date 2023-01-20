@@ -2286,22 +2286,49 @@ if (IS_HEADER) {
 			);
 	}, 0);
 }
-const obj = [
-	{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
-	{ transform: "translate(-98%, -92%) rotate(-13deg)", url: "./image/500.png" },
-	{ transform: "translate(-50%, -100%)", url: "./image/500.png" },
-	{ transform: "translate(-11%, -87%) rotate(10deg)", url: "./image/500.png" },
-	{ transform: "translate(33%, -73%) rotate(20deg)", url: "./image/500.png" }
-]
+const obj = {
+	obj_4 : [
+		{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
+		{ transform: "translate(-88%, -92%) rotate(-7deg)", url: "./image/500.png" },
+		{ transform: "translate(-26%, -87%) rotate(7deg)", url: "./image/500.png" },
+		{ transform: "translate(33%, -73%) rotate(20deg)", url: "./image/500.png" }
+	],
+	obj_5 : [
+		{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
+		{ transform: "translate(-98%, -92%) rotate(-13deg)", url: "./image/500.png" },
+		{ transform: "translate(-50%, -100%)", url: "./image/500.png" },
+		{ transform: "translate(-50%, -100%)", url: "./image/500.png" },
+		{ transform: "translate(-11%, -87%) rotate(10deg)", url: "./image/500.png" },
+		{ transform: "translate(33%, -73%) rotate(20deg)", url: "./image/500.png" }
+	],
+	obj_6 : [
+		{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
+		{ transform: "translate(-104%, -92%) rotate(-13deg)", url: "./image/500.png" },
+		{ transform: "translate(-74%, -99%) rotate(-6deg)", url: "./image/500.png" },
+		{ transform: "translate(-38%, -93%) rotate(3deg)", url: "./image/500.png" },
+		{ transform: "translate(-2%, -87%) rotate(10deg)", url: "./image/500.png" },
+		{ transform: "translate(33%, -73%) rotate(20deg)", url: "./image/500.png" }
+	],
+	obj_7 : [
+		{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
+		{ transform: "translate(-112%, -89%) rotate(-13deg)", url: "./image/500.png" },
+		{ transform: "translate(-83%, -95%) rotate(-9deg)", url: "./image/500.png" },
+		{ transform: "translate(-54%, -92%) rotate(-2deg)", url: "./image/500.png" },
+		{ transform: "translate(-24%, -89%) rotate(6deg)", url: "./image/500.png" },
+		{ transform: "translate(5%, -81%) rotate(10deg)", url: "./image/500.png" },
+		{ transform: "translate(33%, -69%) rotate(15deg)", url: "./image/500.png" }
+	]
+}
 function actionClick() {
-	console.log(obj)
+	let array_VND = getRandomInt()
 	document.getElementById('flip-box-inner').style.transform = "rotateY(180deg)"
 	setTimeout(() => {
+		document.getElementById('nap').style.zIndex = "-2"
 		document.getElementById('nap').style.transform = "translateY(-100%) rotateX(180deg)"
 	}, 1000);
 	setTimeout(() => {
 		let vnd = document.getElementById('flip-box-back');
-		obj.forEach((item, index) => {
+		array_VND.forEach((item, index) => {
 			var html = document.createElement('img')
 			html.setAttribute('src', item.url)
 			html.setAttribute('id', 'vnd-' + index)
@@ -2314,17 +2341,20 @@ function actionClick() {
 			list_img.forEach((item, index) => {
 				item.style.transform = "translate(-50%,-100%)"
 				setTimeout(() => {
-					document.getElementById('vnd-' + index).style.transform = obj[index].transform
+					document.getElementById('vnd-' + index).style.transform = array_VND[index].transform
 				}, 1000);
 			})
 		}, 100);
 
 	}, 2000);
+	setTimeout(() => {
+
+	},3000)
 
 }
-function noHover() {
-	var x = Math.floor(Math.random() * window.innerWidth);
-	var y = Math.floor(Math.random() * window.innerHeight);
-	document.getElementById("btnNo").style.left = x + "px";
-	document.getElementById("btnNo").style.top = y + "px";
+function getRandomInt() {
+	let number = parseInt(Math.random() * (8 - 4) + 4)
+	let name = 'obj_'+number
+	return obj[name]
 }
+	

@@ -422,7 +422,7 @@ body {
   width: 310px;
   height: auto;
   transition: 0.8s all;
-  z-index: -2;
+  z-index: 1;
 }
 .div-lixi{
   width: 100%;
@@ -462,6 +462,7 @@ body {
     width: 200px !important;
     height: 400px !important;
   }
+  
 }
 @media only screen and (max-width: 375px) {
   .lixi, .nap{
@@ -483,7 +484,7 @@ body {
   
 .flip-box-inner {
   width: 310px;
-  height: auto;
+  height: 620px;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
