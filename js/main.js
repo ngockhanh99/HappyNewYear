@@ -2326,7 +2326,7 @@ function actionClick() {
 	document.getElementById('flip-box-inner').style.transform = "rotateY(180deg)"
 	setTimeout(() => {
 		document.getElementById('nap').style.zIndex = "-2"
-		document.getElementById('nap').style.transform = "translateY(-100%) rotateX(180deg)"
+		document.getElementById('nap').style.transform = "translateY(-99%) rotateX(180deg)"
 	}, 1000);
 	setTimeout(() => {
 		let vnd = document.getElementById('flip-box-back');
@@ -2344,7 +2344,7 @@ function actionClick() {
 				item.style.transform = "translate(-50%,-100%)"
 				setTimeout(() => {
 					document.getElementById('vnd-' + index).style.transform = array_VND[index].transform
-				}, 1200);
+				}, 1000);
 			})
 		}, 1000);
 
@@ -2354,9 +2354,9 @@ function actionClick() {
 		array_VND.forEach((item) => {
 			sum+=item.value
 		})
-		document.getElementById("value-lixi").innerHTML=sum
+		// document.getElementById("value-lixi").innerHTML=sum
 		document.getElementById("value-lixi").style.opacity="1"
-	},3500)
+	},4500)
 
 }
 function getRandomInt() {

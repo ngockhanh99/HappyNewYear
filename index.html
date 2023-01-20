@@ -19,7 +19,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 	<link rel="stylesheet" href="./css/style.css">
-
+	<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -58,25 +58,33 @@
 			<div class="flip-box div-lixi">
 				<div class="flip-box-inner" id="flip-box-inner" onclick="actionClick()">
 					<div class="flip-box-front">
-						<img src="./image/truoc.png" alt="" class="lixi" >
-						
+						<img src="./image/truoc.png" alt="" class="lixi">
+
 					</div>
 					<div class="flip-box-back" id="flip-box-back">
-						<img src="./image/sau.png" alt="" class="lixi" >
+						<img src="./image/sau.png" alt="" class="lixi">
 						<img src="./image/nap.png" alt="" class="nap" id="nap">
-						<div class="value-lixi">
-							<p id="value-lixi"></p>
+						<div class="value-lixi" id="value-lixi">
+							<div class="sign">
+								<span class="fast-flicker">H</span>appy<span class="flicker" style="margin: 0 5px;"> New </span>Year
+							</div>
+							<div class="sign" style="padding-top:50px">
+								<span class="fast-flicker">My </span><span class="flicker" style="margin-left: 5px;">Lov</span>e 
+								<span class="flicker" style="margin-left: 5px;">
+								<i class="fa fa-heart icon-heart" aria-hidden="true"></i>
+							</span>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="canvas-container">
 				<canvas id="trails-canvas"></canvas>
 				<canvas id="main-canvas"></canvas>
 			</div>
-			<div class="controls">
-				<div class="btn pause-btn">
+			<div class="controls" >
+				<div class="btn pause-btn" style="opacity: 0;">
 					<svg fill="white" width="24" height="24">
 						<use href="#icon-pause" xlink:href="#icon-pause"></use>
 					</svg>
@@ -86,7 +94,7 @@
 						<use href="#icon-sound-off" xlink:href="#icon-sound-off"></use>
 					</svg>
 				</div>
-				<div class="btn settings-btn">
+				<div class="btn settings-btn" style="opacity: 0;">
 					<svg fill="white" width="24" height="24">
 						<use href="#icon-settings" xlink:href="#icon-settings"></use>
 					</svg>
