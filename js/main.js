@@ -2346,9 +2346,9 @@ function actionClick() {
 					document.getElementById('vnd-' + index).style.transform = array_VND[index].transform
 				}, 1200);
 			})
-		}, 700);
+		}, 1000);
 
-	}, 2500);
+	}, 2000);
 	setTimeout(() => {
 		let sum = 0
 		array_VND.forEach((item) => {
