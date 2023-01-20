@@ -2286,41 +2286,43 @@ if (IS_HEADER) {
 			);
 	}, 0);
 }
+const array_vnd = ['500','200','100']
 const obj = {
 	obj_4 : [
-		{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
-		{ transform: "translate(-88%, -92%) rotate(-7deg)", url: "./image/500.png" },
-		{ transform: "translate(-26%, -87%) rotate(7deg)", url: "./image/500.png" },
-		{ transform: "translate(33%, -73%) rotate(20deg)", url: "./image/500.png" }
+		{ transform: "translate(-137%, -81%) rotate(-23deg)"},
+		{ transform: "translate(-88%, -92%) rotate(-7deg)"},
+		{ transform: "translate(-26%, -87%) rotate(7deg)"},
+		{ transform: "translate(33%, -73%) rotate(20deg)"}
 	],
 	obj_5 : [
-		{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
-		{ transform: "translate(-98%, -92%) rotate(-13deg)", url: "./image/500.png" },
-		{ transform: "translate(-50%, -100%)", url: "./image/500.png" },
-		{ transform: "translate(-50%, -100%)", url: "./image/500.png" },
-		{ transform: "translate(-11%, -87%) rotate(10deg)", url: "./image/500.png" },
-		{ transform: "translate(33%, -73%) rotate(20deg)", url: "./image/500.png" }
+		{ transform: "translate(-137%, -81%) rotate(-23deg)"},
+		{ transform: "translate(-98%, -92%) rotate(-13deg)"},
+		{ transform: "translate(-50%, -100%)"},
+		{ transform: "translate(-50%, -100%)"},
+		{ transform: "translate(-11%, -87%) rotate(10deg)"},
+		{ transform: "translate(33%, -73%) rotate(20deg)"}
 	],
 	obj_6 : [
-		{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
-		{ transform: "translate(-104%, -92%) rotate(-13deg)", url: "./image/500.png" },
-		{ transform: "translate(-74%, -99%) rotate(-6deg)", url: "./image/500.png" },
-		{ transform: "translate(-38%, -93%) rotate(3deg)", url: "./image/500.png" },
-		{ transform: "translate(-2%, -87%) rotate(10deg)", url: "./image/500.png" },
-		{ transform: "translate(33%, -73%) rotate(20deg)", url: "./image/500.png" }
+		{ transform: "translate(-137%, -81%) rotate(-23deg)"},
+		{ transform: "translate(-104%, -92%) rotate(-13deg)"},
+		{ transform: "translate(-74%, -99%) rotate(-6deg)"},
+		{ transform: "translate(-38%, -93%) rotate(3deg)"},
+		{ transform: "translate(-2%, -87%) rotate(10deg)"},
+		{ transform: "translate(33%, -73%) rotate(20deg)"}
 	],
 	obj_7 : [
-		{ transform: "translate(-137%, -81%) rotate(-23deg)", url: "./image/500.png" },
-		{ transform: "translate(-112%, -89%) rotate(-13deg)", url: "./image/500.png" },
-		{ transform: "translate(-83%, -95%) rotate(-9deg)", url: "./image/500.png" },
-		{ transform: "translate(-54%, -92%) rotate(-2deg)", url: "./image/500.png" },
-		{ transform: "translate(-24%, -89%) rotate(6deg)", url: "./image/500.png" },
-		{ transform: "translate(5%, -81%) rotate(10deg)", url: "./image/500.png" },
-		{ transform: "translate(33%, -69%) rotate(15deg)", url: "./image/500.png" }
+		{ transform: "translate(-137%, -81%) rotate(-23deg)"},
+		{ transform: "translate(-112%, -89%) rotate(-13deg)"},
+		{ transform: "translate(-83%, -95%) rotate(-9deg)"},
+		{ transform: "translate(-54%, -92%) rotate(-2deg)"},
+		{ transform: "translate(-24%, -89%) rotate(6deg)"},
+		{ transform: "translate(5%, -81%) rotate(10deg)"},
+		{ transform: "translate(33%, -69%) rotate(15deg)"}
 	]
 }
 function actionClick() {
 	let array_VND = getRandomInt()
+	console.log(array_VND)
 	document.getElementById('flip-box-inner').style.transform = "rotateY(180deg)"
 	setTimeout(() => {
 		document.getElementById('nap').style.zIndex = "-2"
@@ -2348,13 +2350,24 @@ function actionClick() {
 
 	}, 2000);
 	setTimeout(() => {
-
-	},3000)
+		let sum = 0
+		array_VND.forEach((item) => {
+			sum+=item.value
+		})
+		document.getElementById("value-lixi").innerHTML=sum
+		document.getElementById("value-lixi").style.opacity="1"
+	},3500)
 
 }
 function getRandomInt() {
 	let number = parseInt(Math.random() * (8 - 4) + 4)
+	
 	let name = 'obj_'+number
+	obj[name].forEach(item=>{
+		let value = Math.floor(Math.random() * 3);
+		item.url = "./image/"+array_vnd[value]+".png"
+		item.value=parseInt(array_vnd[value]) * 1000
+	})
 	return obj[name]
 }
 	

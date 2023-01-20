@@ -508,3 +508,13 @@ body {
   color: white;
   transform: rotateY(180deg);
 }
+.value-lixi{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#value-lixi{
+  opacity: 0;
+  transition: 1s all;
+}
